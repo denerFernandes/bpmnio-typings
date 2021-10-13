@@ -52,6 +52,9 @@ declare module 'bpmn-js' {
     ): void;
     importXML(xml: string, done: DoneCallback): void;
 
+    importXML(xml: string): Promise<{warnings: string[]}>;
+    importXML(xml: string, bpmnDiagram: BpmnDiDiagram | string): Promise<{warnings: string[]}>;
+
     /**
      * Open diagram of previously imported XML.
      *
